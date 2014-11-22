@@ -1,0 +1,11 @@
+package com.x.x;
+
+task CICIntegrator {
+	in  sync i64 sin;
+	out sync i64 sout;
+	
+
+	void loop() {
+		sout.write( 0 );
+	}
+}

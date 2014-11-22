@@ -1,0 +1,19 @@
+package com.x.x;
+
+network Top {
+	import com.x.x.DemodNetwork;
+	import com.x.x.CICIntegrator;
+
+	in sync i64 sin;
+	demodChain = new DemodNetwork();
+	demodChain.reads(sin);
+	
+	
+	// Uncomment these two lines for the tricky way of of breaking project generation
+	// CICIntegrator is always non-specialized in the project, however it still breaks.
+	// this is because it is instantiated by a specialized parent (CIC4).
+	// If you uncomment these lines and then specialize, everything works great
+	
+//	c0 = new CICIntegrator();
+//	c0.reads(sin);
+}

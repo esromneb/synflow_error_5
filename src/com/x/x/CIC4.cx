@@ -1,0 +1,16 @@
+package com.x.x;
+
+network CIC4 {
+	import com.x.x.CICIntegrator;
+	
+	// note that these aren't even used :)
+	const uint width = 64;
+	typedef int<width> signed_t;
+	
+	in sync i64 sin;
+	out sync i64 sout;
+
+	c0 = new CICIntegrator();
+	c0.reads(sin);
+	c0.writes(sout);
+}

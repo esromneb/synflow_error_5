@@ -1,0 +1,21 @@
+package com.x.x;
+
+network DemodNetwork {
+	import com.x.x.CIC4;
+	in sync i64 sin;
+	out sync i64 sout;
+	
+	// Switch these for the standard way of breaking project generation.  I have already reported this
+	// Make sure to put back before moving on
+//	c1 = new CIC4();            // uncomment this line 
+	c1 = new CIC4({width:64});    // comment this line
+	
+	
+	
+	
+	
+	c2 = new CIC4({width:64});
+	c1.reads(sin);
+	c1.writes(c2.sin);
+	c2.writes(sout);
+}
